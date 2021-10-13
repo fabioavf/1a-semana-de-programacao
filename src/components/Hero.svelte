@@ -5,19 +5,31 @@
     };
     let eventList = [
         {
-            img: { src: 'http://picsum.photos/80', alt: 'Imagem Evento 1' },
+            img: {
+                src: '/assets/img/movie-ticket.svg',
+                alt: 'Imagem Evento 1',
+            },
             title: 'Evento 1',
         },
         {
-            img: { src: 'http://picsum.photos/80', alt: 'Imagem Evento 2' },
+            img: {
+                src: '/assets/img/movie-ticket.svg',
+                alt: 'Imagem Evento 2',
+            },
             title: 'Evento 2',
         },
         {
-            img: { src: 'http://picsum.photos/80', alt: 'Imagem Evento 3' },
+            img: {
+                src: '/assets/img/movie-ticket.svg',
+                alt: 'Imagem Evento 3',
+            },
             title: 'Evento 3',
         },
         {
-            img: { src: 'http://picsum.photos/80', alt: 'Imagem Evento 4' },
+            img: {
+                src: '/assets/img/movie-ticket.svg',
+                alt: 'Imagem Evento 4',
+            },
             title: 'Evento 4',
         },
     ];
@@ -37,7 +49,9 @@
         <ul>
             {#each eventList as event}
                 <li>
-                    <img src={event.img.src} alt={event.img.alt} />
+                    <div class="img-wrapper">
+                        <img src={event.img.src} alt={event.img.alt} />
+                    </div>
                     <p>{event.title}</p>
                 </li>
             {/each}
@@ -87,6 +101,8 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        gap: 3rem;
+        padding: 1rem 2rem;
     }
 
     .events-list > ul > li {
@@ -94,12 +110,27 @@
         display: flex;
         flex-direction: row;
         align-items: center;
+        gap: 1.5rem;
         color: var(--clr-foreground-secondary);
-
-        margin-right: 2rem;
     }
 
-    .events-list > ul > li > * {
-        margin-right: 1rem;
+    .events-list > ul > li > p {
+        font-weight: 500;
+        color: var(--clr-background-primary);
+    }
+
+    .img-wrapper {
+        width: 6rem;
+        height: 6rem;
+        border-radius: 0.25rem;
+        background-color: var(--clr-background-primary);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-wrapper > img {
+        width: 3.5rem;
     }
 </style>

@@ -1,6 +1,8 @@
 <script>
     import Header from './components/Header.svelte';
     import Hero from './components/Hero.svelte';
+    import AboutUs from './components/AboutUs.svelte';
+    import Footer from './components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -15,12 +17,16 @@
 
 <Header />
 <Hero />
+<AboutUs />
+<Footer />
 
 <style>
     :global(body) {
         margin: 0;
         padding: 0;
         background-color: var(--clr-background-primary);
+        /* overflow: hidden; */
+        overflow-x: hidden;
     }
 
     :global(:root) {
@@ -30,12 +36,13 @@
         --clr-foreground-secondary: #f4f4f4;
         --clr-background-primary: #141414;
         --clr-background-secondary: #28282f;
+        --clr-background-terciary: #0b0911;
 
         --font-family-primary: Roboto, sans-serif;
         --font-size-h1: 3.5rem;
         --font-size-h2: 3rem;
-        --font-size-h3: 2.5rem;
-        --font-size-h4: 2rem;
+        --font-size-h3: 2rem;
+        --font-size-h4: 1.5rem;
         --font-size-p1: 1.125rem;
         --font-size-p2: 1rem;
         --font-line-height: 1.5rem;

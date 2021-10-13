@@ -1,6 +1,6 @@
 <script>
     let logo = {
-        src: 'http://picsum.photos/80/40',
+        src: 'http://picsum.photos/70/32',
         alt: 'Logo da 1a Semana de Programação',
     };
     let navItems = [
