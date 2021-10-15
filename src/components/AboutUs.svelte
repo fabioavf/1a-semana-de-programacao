@@ -1,4 +1,6 @@
 <script>
+    import { fly } from 'svelte/transition';
+
     let teamsList = [
         {
             name: 'byron.solutions',

@@ -1,4 +1,6 @@
 <script>
+    import Carousel from '@beyonk/svelte-carousel';
+
     let backgroundImage = {
         src: '/public/assets/img/mountains.png',
         alt: 'Montanhas em pixel art',
@@ -9,31 +11,37 @@
                 src: '/assets/img/movie-ticket.svg',
                 alt: 'Imagem Evento 1',
             },
-            title: 'Evento 1',
+            title: 'HTML / CSS / JS básico',
         },
         {
             img: {
                 src: '/assets/img/movie-ticket.svg',
                 alt: 'Imagem Evento 2',
             },
-            title: 'Evento 2',
+            title: 'Python',
         },
         {
             img: {
                 src: '/assets/img/movie-ticket.svg',
                 alt: 'Imagem Evento 3',
             },
-            title: 'Evento 3',
+            title: 'C# e Unity',
         },
         {
             img: {
                 src: '/assets/img/movie-ticket.svg',
                 alt: 'Imagem Evento 4',
             },
-            title: 'Evento 4',
+            title: 'Maratona de Programação',
         },
     ];
+
+    let width;
+
+    $: console.log(width);
 </script>
+
+<svelte:window bind:outerWidth={width} />
 
 <div class="container">
     <div class="heading">
@@ -62,6 +70,7 @@
 <style>
     .container {
         padding: 3rem 8.75rem;
+        height: 100vh;
         background-image: url(/assets/img/mountains.png);
         background-size: contain;
         background-repeat: no-repeat;
@@ -120,6 +129,7 @@
     }
 
     .img-wrapper {
+        aspect-ratio: 1 / 1;
         width: 6rem;
         height: 6rem;
         border-radius: 0.25rem;

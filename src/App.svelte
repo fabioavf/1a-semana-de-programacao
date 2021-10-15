@@ -3,10 +3,16 @@
     import Hero from './components/Hero.svelte';
     import AboutUs from './components/AboutUs.svelte';
     import Footer from './components/Footer.svelte';
+    import Schedule from './components/Schedule.svelte';
+
+    let y;
+
+    $: console.log(y);
 </script>
 
+<svelte:window bind:scrollY={y} />
+
 <svelte:head>
-    <link rel="stylesheet" href="/node_modules/normalize.css/normalize.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,6 +24,7 @@
 <Header />
 <Hero />
 <AboutUs />
+<Schedule />
 <Footer />
 
 <style>
@@ -33,8 +40,12 @@
         font-size: 16px;
 
         --clr-foreground-primary: #04d361;
-        --clr-foreground-secondary: #f4f4f4;
-        --clr-background-primary: #141414;
+        --clr-foreground-primary-lighter: #b0eaaa;
+        --clr-foreground-primary-darker: #282c35;
+        --clr-foreground-secondary: #d7d4d4;
+        --clr-foreground-secondary-faded: #737373;
+
+        --clr-background-primary: #242424;
         --clr-background-secondary: #28282f;
         --clr-background-terciary: #0b0911;
 
