@@ -34,8 +34,8 @@
         margin: 0;
         padding: 0;
         background-color: var(--clr-background-primary);
-        /* overflow: hidden; */
         overflow-x: hidden;
+        box-sizing: border-box;
     }
 
     :global(:root) {
