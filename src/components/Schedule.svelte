@@ -37,6 +37,13 @@
                     >{day.tabTitle}
                 </button>
             {/each}
+
+            <button class="list-expander">
+                <img
+                    src="/assets/img/double-right.png"
+                    alt="Seta dupla apontando à direita"
+                />
+            </button>
         </div>
         {#each daysList as day}
             <div
@@ -112,5 +119,16 @@
         padding: 2rem;
         color: var(--clr-foreground-secondary);
         height: 27.25rem;
+    }
+
+    @media only screen and (min-width: 1440px) {
+        .list-expander {
+            display: none;
+        }
+    }
+    @media only screen and (min-width: 768px) and (max-width: 1439px) {
+        .list-expander {
+            display: none;
+        }
     }
 </style>

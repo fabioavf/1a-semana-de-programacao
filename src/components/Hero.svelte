@@ -45,18 +45,20 @@
 
 <div class="container">
     <div class="heading">
-        <h1>Seu ecossistema para aprender e evoluir na programação</h1>
-        <p>
+        <h1 class="heading-title">
+            Seu ecossistema para aprender e evoluir na programação
+        </h1>
+        <p class="heading-subtitle">
             Embarque no foguete com milhares de devs para aprender
             desenvolvimento web, evoluir de forma contínua e se manter relevante
             no mercado.
         </p>
     </div>
 
-    <div class="events-list">
-        <ul>
+    <div class="events-section">
+        <ul class="events-list">
             {#each eventList as event}
-                <li>
+                <li class="event">
                     <div class="img-wrapper">
                         <img src={event.img.src} alt={event.img.alt} />
                     </div>
@@ -70,7 +72,7 @@
 <style>
     .container {
         padding: 3rem 8.75rem;
-        height: 100vh;
+        /* height: 100vh; */
         background-image: url(/assets/img/mountains.png);
         background-size: contain;
         background-repeat: no-repeat;
@@ -86,16 +88,16 @@
         color: var(--clr-foreground-secondary);
     }
 
-    .heading > h1 {
+    .heading-title {
         font-size: var(--font-size-h1);
     }
 
-    .heading > p {
+    .heading-subtitle {
         font-size: var(--font-size-p1);
         line-height: 1.5em;
     }
 
-    .events-list {
+    .events-section {
         margin: 4rem auto;
         background-color: var(--clr-foreground-primary);
         border-radius: 6px;
@@ -105,16 +107,18 @@
         align-items: center;
     }
 
-    .events-list > ul {
-        display: flex;
-        flex-direction: row;
+    .events-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
         justify-content: center;
         align-items: center;
         gap: 3rem;
         padding: 1rem 2rem;
     }
 
-    .events-list > ul > li {
+    .event {
         list-style: none;
         display: flex;
         flex-direction: row;
@@ -123,7 +127,7 @@
         color: var(--clr-foreground-secondary);
     }
 
-    .events-list > ul > li > p {
+    .event > p {
         font-weight: 500;
         color: var(--clr-background-primary);
     }
@@ -142,5 +146,19 @@
 
     .img-wrapper > img {
         width: 3.5rem;
+    }
+
+    @media only screen and (min-width: 1440px) {
+        .events-list {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1439px) {
+        .events-list {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+        }
     }
 </style>

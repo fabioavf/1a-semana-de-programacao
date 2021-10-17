@@ -9,9 +9,13 @@
         { name: 'Programação', id: '#programacao' },
         { name: 'Passagem', id: '#passagem' },
     ];
+
+    let y;
 </script>
 
-<nav>
+<svelte:window bind:scrollY={y} />
+
+<nav style={y < 60 ? '' : 'background-color: var(--clr-background-secondary);'}>
     <ul>
         {#each navItems as item, i}
             {#if i == navItems.length / 2}
@@ -31,8 +35,10 @@
         top: 0;
 
         background-color: transparent;
-        min-height: 88px;
+        /* max-height: 88px; */
         padding: 1rem 0;
+
+        transition: all ease-in-out 200ms;
     }
 
     nav > ul {

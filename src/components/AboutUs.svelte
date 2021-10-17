@@ -17,18 +17,23 @@
             desc: 'Os membros se envolvem com o desenvolvimento de jogos para as diversas plataformas, tendo enfoque na Mobile e PC, visando também participar de competições como game jams e disseminar conhecimento acerca das áreas de criação de jogos, através da divulgação de materiais.',
             instagram: 'devunifei',
         },
+        {
+            name: 'Maratona de Programação',
+            desc: 'Os membros se envolvem com o desenvolvimento de jogos para as diversas plataformas, tendo enfoque na Mobile e PC, visando também participar de competições como game jams e disseminar conhecimento acerca das áreas de criação de jogos, através da divulgação de materiais.',
+            instagram: 'devunifei',
+        },
     ];
 </script>
 
 <div class="container">
-    <h1>Aprenda com quem domina o assunto!</h1>
+    <h1 class="section-title">Aprenda com quem domina o assunto!</h1>
 
-    <ul>
+    <ul class="card-section">
         {#each teamsList as team}
-            <li>
-                <h2>{team.name}</h2>
+            <li class="card">
+                <h2 class="card-title">{team.name}</h2>
 
-                <p>{team.desc}</p>
+                <p class="card-text">{team.desc}</p>
 
                 <div class="instagram-link">
                     <img
@@ -50,7 +55,7 @@
         background-color: var(--clr-background-terciary);
     }
 
-    .container > h1 {
+    .section-title {
         font-family: var(--font-family-primary);
         color: var(--clr-foreground-secondary);
         font-size: var(--font-size-h1);
@@ -58,20 +63,24 @@
         margin: 0 0 4rem 0;
     }
 
-    .container > ul {
-        /* margin: 2rem 0; */
-        display: flex;
-        flex-direction: row;
+    .card-section {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-content: center;
+        justify-items: center;
         gap: 2rem;
         padding: 0;
     }
 
-    .container > ul > li {
+    .card {
+        max-width: 20rem;
         background-color: var(--clr-background-secondary);
         list-style: none;
         padding: 1.5rem;
         padding-top: 2.5rem;
 
+        font-family: var(--font-family-primary);
         color: var(--clr-foreground-secondary);
 
         display: flex;
@@ -85,11 +94,11 @@
         background-repeat: no-repeat;
     }
 
-    .container > ul > li > h2 {
+    .card-title {
         font-size: var(--font-size-h3);
     }
 
-    .container > ul > li > p {
+    .card-text {
         line-height: var(--font-line-height);
         font-size: var(--font-size-p2);
         font-weight: 400;
@@ -107,5 +116,17 @@
     .instagram-link > a {
         text-decoration: none;
         color: var(--clr-foreground-secondary);
+    }
+
+    @media only screen and (min-width: 1440px) {
+        .card-section {
+            grid-template-columns: 20rem 20rem 20rem 20rem;
+        }
+    }
+
+    @media only screen and (min-width: 768px) and (max-width: 1439px) {
+        .card-section {
+            grid-template-columns: 20rem 20rem;
+        }
     }
 </style>
