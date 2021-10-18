@@ -1,5 +1,6 @@
 <script>
     import Carousel from '@beyonk/svelte-carousel';
+    import EnrollButton from './EnrollButton.svelte';
 
     let backgroundImage = {
         src: '/public/assets/img/mountains.png',
@@ -58,7 +59,7 @@
     <div class="events-section">
         <ul class="events-list">
             {#each eventList as event}
-                <li class="event">
+                <li class="event drop-shadow">
                     <div class="img-wrapper">
                         <img src={event.img.src} alt={event.img.alt} />
                     </div>
@@ -67,98 +68,75 @@
             {/each}
         </ul>
     </div>
+
+    <EnrollButton text="Inscreva-se!" />
 </div>
 
 <style>
     .container {
-        padding: 3rem 8.75rem;
-        /* height: 100vh; */
-        background-image: url(/assets/img/mountains.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: bottom;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        margin-top: 8rem;
+        margin-bottom: 2rem;
     }
 
     .heading {
-        margin-top: 6rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
 
-        max-width: 600px;
-
-        font-family: var(--font-family-primary);
-        color: var(--clr-foreground-secondary);
+        padding: 0 1.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
     }
 
     .heading-title {
-        font-size: var(--font-size-h1);
+        font-size: var(--font-size-h1-mobile);
+        font-weight: var(--font-weight-h1);
     }
 
     .heading-subtitle {
-        font-size: var(--font-size-p1);
-        line-height: 1.5em;
-    }
-
-    .events-section {
-        margin: 4rem auto;
-        background-color: var(--clr-foreground-primary);
-        border-radius: 6px;
-        min-height: 9rem;
-        width: fit-content;
-        display: flex;
-        align-items: center;
-    }
-
-    .events-list {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-
-        justify-content: center;
-        align-items: center;
-        gap: 3rem;
-        padding: 1rem 2rem;
+        font-size: var(--font-size-p-mobile);
+        line-height: var(--font-line-height);
     }
 
     .event {
-        list-style: none;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 1.5rem;
-        color: var(--clr-foreground-secondary);
+        gap: 1rem;
+
+        background-color: var(--clr-foreground-primary);
+        border-radius: 0.5rem;
+        margin: 1rem;
+        padding: 1rem 1.5rem;
+    }
+
+    .img-wrapper {
+        background-color: var(--clr-background-primary);
+        border-radius: 0.25rem;
+    }
+
+    .img-wrapper > img {
+        padding: 1rem;
     }
 
     .event > p {
         font-weight: 500;
-        color: var(--clr-background-primary);
     }
 
-    .img-wrapper {
-        aspect-ratio: 1 / 1;
-        width: 6rem;
-        height: 6rem;
-        border-radius: 0.25rem;
-        background-color: var(--clr-background-primary);
-
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .img-wrapper > img {
-        width: 3.5rem;
+    .events-section {
+        margin-bottom: 1rem;
     }
 
     @media only screen and (min-width: 1440px) {
-        .events-list {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
-        }
     }
 
     @media only screen and (min-width: 768px) and (max-width: 1439px) {
-        .events-list {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-        }
     }
 </style>

@@ -1,6 +1,5 @@
 <script>
-    import { fly } from 'svelte/transition';
-
+    import EnrollButton from './EnrollButton.svelte';
     let teamsList = [
         {
             name: 'byron.solutions',
@@ -30,7 +29,7 @@
 
     <ul class="card-section">
         {#each teamsList as team}
-            <li class="card">
+            <li class="card drop-shadow">
                 <h2 class="card-title">{team.name}</h2>
 
                 <p class="card-text">{team.desc}</p>
@@ -47,20 +46,24 @@
             </li>
         {/each}
     </ul>
+
+    <EnrollButton text="Faça parte com os melhores!" />
 </div>
 
 <style>
     .container {
-        padding: 3rem 8.75rem;
-        background-color: var(--clr-background-terciary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 100%;
+        margin: 2rem 0;
     }
 
     .section-title {
-        font-family: var(--font-family-primary);
-        color: var(--clr-foreground-secondary);
-        font-size: var(--font-size-h1);
-        max-width: 600px;
-        margin: 0 0 4rem 0;
+        font-size: var(--font-size-h1-mobile);
+        font-weight: var(--font-weight-h1);
+        margin-bottom: 3rem;
     }
 
     .card-section {
@@ -70,32 +73,36 @@
         justify-content: center;
         justify-items: center;
         gap: 2rem;
-        padding: 0;
+        padding: 0 1.5rem;
     }
 
     .card {
-        max-width: 20rem;
-        background-color: var(--clr-background-secondary);
-        list-style: none;
-        padding: 1.5rem;
-        padding-top: 2.5rem;
-
-        font-family: var(--font-family-primary);
-        color: var(--clr-foreground-secondary);
-
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+
+        list-style: none;
+        max-width: 20rem;
+        padding: 1.5rem;
+        padding-top: 2.5rem;
+        border-radius: 0.5rem;
+
+        background-color: var(--clr-background-secondary);
+        font-family: var(--font-family-primary);
+        color: var(--clr-foreground-secondary);
 
         background-image: url(/assets/img/card-blob-top-left.svg),
             url(/assets/img/card-blob-bottom-right.svg);
-        background-size: 30%;
+        background-size: 6rem;
         background-position: top left, bottom right;
         background-repeat: no-repeat;
     }
 
     .card-title {
-        font-size: var(--font-size-h3);
+        font-size: var(--font-size-h2-mobile);
+        font-weight: 700;
     }
 
     .card-text {
@@ -107,7 +114,6 @@
     .instagram-link {
         display: flex;
         flex-direction: row;
-
         justify-content: baseline;
         align-items: center;
         gap: 0.5rem;
@@ -119,14 +125,8 @@
     }
 
     @media only screen and (min-width: 1440px) {
-        .card-section {
-            grid-template-columns: 20rem 20rem 20rem 20rem;
-        }
     }
 
     @media only screen and (min-width: 768px) and (max-width: 1439px) {
-        .card-section {
-            grid-template-columns: 20rem 20rem;
-        }
     }
 </style>
