@@ -26,7 +26,7 @@
         {
             id: 2,
             tabTitle: 'Quarta-feira (03/11)',
-            title: 'byron.solutions',
+            title: 'byron.a',
             subtitle: 'Portfólio completo do zero',
             schedule: [
                 {
@@ -97,6 +97,14 @@
     let activeTab = 1;
 
     const handleClick = (tabValue) => () => (activeTab = tabValue);
+
+    $: handleExpander = () => {
+        if (activeTab >= daysList.at(0).id && activeTab < daysList.at(-1).id) {
+            activeTab++;
+        } else {
+            activeTab = daysList.at(0).id;
+        }
+    };
 </script>
 
 <div class="container">
@@ -112,7 +120,10 @@
                 </button>
             {/each}
 
-            <button class="tabs-button list-expander">
+            <button
+                class="tabs-button list-expander"
+                on:click={handleExpander()}
+            >
                 <img
                     src="/assets/img/double-right.png"
                     alt="Seta dupla apontando à direita"
@@ -124,7 +135,7 @@
                 class="tabs"
                 style={activeTab === day.id ? '' : 'display: none;'}
             >
-                <div>
+                <div class="left-tab-section">
                     <div class="tab-heading">
                         <h2 class="tab-title">{day.title}</h2>
                         <h3 class="tab-subtitle">{day.subtitle}</h3>
@@ -136,20 +147,22 @@
                     </code>
                 </div>
 
-                <ul class="tab-schedule">
-                    {#each day.schedule as timeframe}
-                        <li class="tab-schedule-item">
-                            <h4 class="tab-schedule-item-time">
-                                {timeframe.title}
-                            </h4>
-                            <p class="tab-schedule-item-desc">
-                                {timeframe.description}
-                            </p>
-                        </li>
-                    {/each}
-                </ul>
+                <div class="right-tab-section">
+                    <ul class="tab-schedule">
+                        {#each day.schedule as timeframe}
+                            <li class="tab-schedule-item">
+                                <h4 class="tab-schedule-item-time">
+                                    {timeframe.title}
+                                </h4>
+                                <p class="tab-schedule-item-desc">
+                                    {timeframe.description}
+                                </p>
+                            </li>
+                        {/each}
+                    </ul>
 
-                <button class="enroll-button">Quero participar</button>
+                    <button class="enroll-button">Quero participar</button>
+                </div>
             </div>
         {/each}
     </div>
@@ -190,6 +203,7 @@
     }
 
     .tabs-button {
+        display: none;
         position: relative;
         flex-grow: 1;
         background-color: var(--clr-background-primary);
@@ -204,6 +218,7 @@
     }
 
     .tabs-button.active {
+        display: block;
         color: var(--clr-foreground-secondary);
         background-color: var(--clr-background-secondary);
     }
@@ -217,6 +232,10 @@
         right: 0;
     }
 
+    .list-expander {
+        display: block;
+    }
+
     .tabs-button:last-child {
         border-right: none;
     }
@@ -224,6 +243,7 @@
     .tabs {
         display: flex;
         flex-direction: column;
+        gap: 2rem;
 
         padding: 2rem;
         color: var(--clr-foreground-secondary);
@@ -250,9 +270,21 @@
         border-radius: 0.5rem;
         background-color: var(--clr-background-primary);
         padding: 1rem;
-        width: 100%;
+        font-size: 12px;
 
         font-family: monospace;
+    }
+
+    .left-tab-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .right-tab-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
     }
 
     .tab-schedule {
@@ -297,11 +329,19 @@
     }
 
     @media only screen and (min-width: 1440px) {
+        .tabs-button {
+            display: block;
+        }
+
         .list-expander {
             display: none;
         }
     }
     @media only screen and (min-width: 768px) and (max-width: 1439px) {
+        .tabs-button {
+            display: block;
+        }
+
         .list-expander {
             display: none;
         }

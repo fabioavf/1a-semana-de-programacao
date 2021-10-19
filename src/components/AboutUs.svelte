@@ -63,6 +63,7 @@
     .section-title {
         font-size: var(--font-size-h1-mobile);
         font-weight: var(--font-weight-h1);
+        margin: 0 1.5rem;
         margin-bottom: 3rem;
     }
 
@@ -125,8 +126,14 @@
     }
 
     @media only screen and (min-width: 1440px) {
+        .card-section {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
     }
 
     @media only screen and (min-width: 768px) and (max-width: 1439px) {
+        .card-section {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 </style>
