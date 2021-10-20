@@ -125,15 +125,15 @@
         color: var(--clr-foreground-secondary);
     }
 
-    @media only screen and (min-width: 1440px) {
-        .card-section {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-    }
-
-    @media only screen and (min-width: 768px) and (max-width: 1439px) {
+    @media only screen and (min-width: 768px) {
         .card-section {
             grid-template-columns: 1fr 1fr;
         }
     }
+
+    /* @media only screen and (min-width: 1440px) {
+        .card-section {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+    } */
 </style>

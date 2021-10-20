@@ -25,18 +25,18 @@
 <Hero />
 <AboutUs />
 <Schedule />
+<Footer />
 
-<!-- <Footer /> -->
 <style>
     :global(body) {
         background-color: var(--clr-background-primary);
     }
 
     :global(:root) {
-        --clr-foreground-primary: #47729d;
-        --clr-foreground-primary-lighter: #5f98d2;
-        --clr-foreground-primary-darker: #283f57;
-        --clr-foreground-secondary: #f5f4f4;
+        --clr-foreground-primary: #2871bb;
+        --clr-foreground-primary-lighter: #3697fb;
+        --clr-foreground-primary-darker: #173e67;
+        --clr-foreground-secondary: #f5f3f3;
         --clr-foreground-secondary-faded: #737373;
 
         --clr-background-primary: #242424;

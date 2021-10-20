@@ -1,8 +1,13 @@
 <script>
+    import * as animateScroll from 'svelte-scrollto';
+
     export let text;
 </script>
 
-<button class="button-enroll">
+<button
+    on:click={() => animateScroll.scrollTo({ element: '.tabs' })}
+    class="button-enroll"
+>
     <img src="assets/img/down-arrow.png" alt="Seta apontando para baixo" />
     {text}
 </button>

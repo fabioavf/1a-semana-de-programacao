@@ -13,13 +13,21 @@
             site: 'https://dev-unifei.github.io/',
         },
     ];
+
+    let logoUnifei = {
+        src: '/assets/img/logo-unifei.png',
+        alt: 'Logotipo da Universidade Federal de Itajubá',
+    };
 </script>
 
 <footer>
     <div class="footer-wrapper">
+        <div class="divider" />
+
         <div class="logo-section">
             <img
-                src="http://picsum.photos/228/90"
+                class="logo"
+                src="/assets/img/logo-horizontal.png"
                 alt="Logotipo da 1a Semana de Programação da Unifei"
             />
             <p>I Semana de Programação</p>
@@ -29,86 +37,102 @@
             <h4>Organizadores</h4>
             <ul>
                 {#each organizerList as organizer}
-                    <li><a href={organizer.site}>{organizer.name}</a></li>
+                    <li>
+                        <a class="organizer-item" href={organizer.site}
+                            >{organizer.name}</a
+                        >
+                    </li>
                 {/each}
             </ul>
         </div>
-        <div class="social-section">
-            <h4>Redes Sociais</h4>
+        <div class="unifei-section">
+            <img src={logoUnifei.src} alt={logoUnifei.alt} />
+        </div>
+
+        <div class="divider" />
+
+        <div class="byron-section">
+            <p>Desenvolvido por</p>
+
+            <a href="http://byronsolutions.com">
+                <img
+                    src="/assets/img/logo-byron-branca.png"
+                    alt="Logotipo da byron.solutions"
+                />
+            </a>
         </div>
     </div>
-
-    <p>
-        Desenvolvido por <a href="http://byronsolutions.com">
-            <img
-                src="/assets/img/logo-byron-branca.png"
-                alt="Logotipo da byron.solutions"
-            />
-        </a>
-    </p>
 </footer>
 
 <style>
     footer {
-        display: flex;
-        flex-direction: column;
-    }
-
-    footer > p {
-        text-align: center;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 0.5rem;
-        color: var(--clr-foreground-secondary);
-        font-size: var(--font-size-h4);
-    }
-
-    footer > p > a {
-        height: 45px;
-        text-decoration: none;
+        padding: 2.5rem 1.5rem;
     }
 
     .footer-wrapper {
-        height: 16rem;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        background-color: var(--clr-background-primary);
-        padding: 3rem 8.75rem;
-
-        color: var(--clr-foreground-secondary);
-    }
-
-    footer > * {
-        flex: 1;
-    }
-
-    .logo-section p,
-    .organizers-section a {
-        font-size: var(--font-size-p1);
-    }
-
-    footer h4 {
-        font-size: var(--font-size-h4);
-    }
-
-    .organizers-section > ul {
         display: flex;
         flex-direction: column;
-        gap: 0.5rem;
-        margin: 0;
-        padding: 0;
+        justify-content: space-around;
+        align-items: center;
+        gap: 2rem;
     }
 
-    .organizers-section > ul > li {
-        list-style: none;
+    .footer-wrapper > div {
+        width: 100%;
     }
 
-    .organizers-section a {
-        text-decoration: none;
+    .logo-section,
+    .organizers-section {
+        font-size: var(--font-size-p1);
+        line-height: 28px;
+    }
+
+    .organizers-section > h4 {
+        font-size: var(--font-size-h2-mobile);
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+
+    .organizer-item {
         color: var(--clr-foreground-secondary);
+    }
+
+    .organizer-item:hover,
+    .organizer-item:focus {
+        outline: none;
+        text-decoration: none;
+        border-bottom: 2px solid var(--clr-foreground-primary);
+    }
+
+    .unifei-section > img {
+        width: 100%;
+        max-width: 25rem;
+    }
+
+    .logo {
+        width: 12.5rem;
+    }
+
+    .byron-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .divider {
+        width: max;
+        border-bottom: 2px solid var(--clr-background-secondary);
+    }
+
+    @media only screen and (min-width: 768px) {
+        .footer-wrapper {
+            align-items: center;
+        }
+    }
+
+    @media only screen and (min-width: 1440px) {
+        .footer-wrapper {
+        }
     }
 </style>

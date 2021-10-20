@@ -3,7 +3,7 @@
     import EnrollButton from './EnrollButton.svelte';
 
     let backgroundImage = {
-        src: '/public/assets/img/mountains.png',
+        src: '/assets/img/mountains.png',
         alt: 'Montanhas em pixel art',
     };
     let eventList = [
@@ -44,7 +44,7 @@
 
 <svelte:window bind:outerWidth={width} />
 
-<div class="container">
+<div class="container" style="--background-url: url({backgroundImage.src});">
     <div class="heading">
         <h1 class="heading-title">
             Seu ecossistema para aprender e evoluir na programação
@@ -78,8 +78,7 @@
         flex-direction: column;
         align-items: center;
 
-        width: 100%;
-        margin-top: 8rem;
+        padding-top: 8rem;
         margin-bottom: 2rem;
     }
 
@@ -104,6 +103,13 @@
         line-height: var(--font-line-height);
     }
 
+    .events-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 1rem;
+    }
+
     .event {
         display: flex;
         flex-direction: column;
@@ -113,8 +119,9 @@
 
         background-color: var(--clr-foreground-primary);
         border-radius: 0.5rem;
-        margin: 1rem;
         padding: 1rem 1.5rem;
+        text-align: center;
+        line-height: 150%;
     }
 
     .img-wrapper {
@@ -134,9 +141,16 @@
         margin-bottom: 1rem;
     }
 
-    @media only screen and (min-width: 1440px) {
-    }
-
-    @media only screen and (min-width: 768px) and (max-width: 1439px) {
+    @media only screen and (min-width: 768px) {
+        /* .container {
+            padding-left: 10rem;
+            padding-right: 10rem;
+        } */
+        /* .heading-title {
+            text-align: left;
+        } */
+        .events-list {
+            grid-template-columns: 1fr 1fr;
+        }
     }
 </style>

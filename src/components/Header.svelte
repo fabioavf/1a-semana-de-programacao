@@ -15,7 +15,7 @@
 
 <svelte:window bind:scrollY={y} />
 
-<nav class="navbar {y < 60 ? '' : 'nav-hide'}">
+<nav class="navbar {y < 60 ? '' : 'anav-hide'}">
     <ul class="nav-list">
         {#each navItems as item, i}
             {#if i == navItems.length / 2}

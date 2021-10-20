@@ -4,91 +4,87 @@
             id: 1,
             tabTitle: 'Segunda-feira (01/11)',
             title: 'byron.solutions',
-            subtitle: 'Portfólio completo do zero',
+            subtitle: 'Desenvolvimento de um portfólio pessoal',
             schedule: [
                 {
                     title: '13h30 - 15h00',
                     description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                        'Teoria: O mini-curso terá como objetivo o ensinamento do ciclo básico do desenvolvimento web, contemplando HTML, CSS e JS.',
                 },
                 {
-                    title: '13h30 - 15h00',
+                    title: '16h00 - 18h30',
                     description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                        'Teoria: Será proposto o desenvolvimento de um portfólio pessoal para os alunos participantes.',
                 },
                 {
-                    title: '13h30 - 15h00',
+                    title: '19h30 - 20h30',
                     description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                        'Palestra: 	"Não é preciso anos de estudo para ser desenvolvedor"',
                 },
             ],
         },
         {
             id: 2,
             tabTitle: 'Quarta-feira (03/11)',
-            title: 'byron.a',
-            subtitle: 'Portfólio completo do zero',
+            title: 'Black Bee',
+            subtitle: 'Visão computacional',
             schedule: [
                 {
                     title: '13h30 - 15h00',
                     description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                        'Teoria: Serão abordados os seguintes tópicos sobre Visão Computacional: contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
                 },
                 {
-                    title: '13h30 - 15h00',
+                    title: '16h00 - 18h30',
                     description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                        'Prática: Para o desafio, um projeto de identificação de itens em datasets que serão disponibilizados pelos membros da equipe. Os alunos deverão criar uma aplicação para fazer a detecção.',
                 },
                 {
-                    title: '13h30 - 15h00',
-                    description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                    title: '19h30 - 20h30',
+                    description: 'Palestra: a definir',
                 },
             ],
         },
         {
             id: 3,
             tabTitle: 'Quinta-feira (04/11)',
-            title: 'byron.solutions',
-            subtitle: 'Portfólio completo do zero',
+            title: 'Dev-U',
+            subtitle: 'Programação de Jogos',
             schedule: [
                 {
                     title: '13h30 - 15h00',
                     description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                        'Teoria: C#; Introdução a MonoBehaviours e o Conceito de GameLoop; Editor Unity.',
                 },
                 {
-                    title: '13h30 - 15h00',
+                    title: '16h00 - 18h30',
                     description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                        'Prática: Dado um projeto 2D da Unity com os recursos gráficos já pré-disponibilizados, escrever um código-fonte e utilizando a biblioteca matemática do C#, implementar a lei da gravitação de Newton em corpos rígidos.',
                 },
                 {
-                    title: '13h30 - 15h00',
-                    description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                    title: '19h30 - 20h30',
+                    description: 'Palestra: Desenvolvimento de "serious games"',
                 },
             ],
         },
         {
             id: 4,
             tabTitle: 'Sexta-feira (05/11)',
-            title: 'byron.solutions',
-            subtitle: 'Portfólio completo do zero',
+            title: 'Maratona de programação',
+            subtitle: '',
             schedule: [
                 {
                     title: '13h30 - 15h00',
                     description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                        'Teoria: Apresentação de um simulado de maratona de programação com problemas computacionais a serem resolvidos.',
                 },
                 {
-                    title: '13h30 - 15h00',
-                    description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                    title: '16h00 - 18h30',
+                    description: 'Prática: Resolução dos problemas propostos.',
                 },
                 {
-                    title: '13h30 - 15h00',
-                    description:
-                        'Teoria: Contextualização, teoria e conceitos iniciais, entendendo a aplicação, base da linguagem python e biblioteca OpenCV.',
+                    title: '19h30 - 20h30',
+                    description: 'Palestra: Maratona de programação',
                 },
             ],
         },
@@ -190,6 +186,7 @@
         justify-content: center;
         align-items: center;
 
+        /* width: 72.5rem; */
         border-radius: 0.5rem;
         border: 1px solid #000;
         background-color: var(--clr-background-secondary);
@@ -291,6 +288,7 @@
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        max-width: 600px;
     }
 
     .tab-schedule-item {
