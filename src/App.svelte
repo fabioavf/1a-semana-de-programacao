@@ -17,6 +17,10 @@
 <style>
     :global(body) {
         background-color: var(--clr-background-primary);
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     :global(:root) {

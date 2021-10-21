@@ -18,58 +18,58 @@
         src: '/assets/img/logo-unifei.png',
         alt: 'Logotipo da Universidade Federal de Itajubá',
     };
+
+    let logoImc = {
+        src: '/assets/img/logo-imc.png',
+        alt: 'Logotipo do Instituto de Matemática e Computação',
+    };
 </script>
 
+<div class="divider" />
+
 <footer>
-    <div class="footer-wrapper">
-        <div class="divider" />
-
-        <div class="logo-section">
-            <img
-                class="logo"
-                src="/assets/img/logo-horizontal.png"
-                alt="Logotipo da 1a Semana de Programação da Unifei"
-            />
-            <p>I Semana de Programação</p>
-            <p>Todos os direitos reservados</p>
-        </div>
-        <div class="organizers-section">
-            <h4>Organizadores</h4>
-            <ul>
-                {#each organizerList as organizer}
-                    <li>
-                        <a class="organizer-item" href={organizer.site}
-                            >{organizer.name}</a
-                        >
-                    </li>
-                {/each}
-            </ul>
-        </div>
-        <div class="unifei-section">
-            <img src={logoUnifei.src} alt={logoUnifei.alt} />
-        </div>
-
-        <div class="divider" />
-
-        <div class="byron-section">
-            <p>Desenvolvido por</p>
-
-            <a href="http://byronsolutions.com">
-                <img
-                    src="/assets/img/logo-byron-branca.png"
-                    alt="Logotipo da byron.solutions"
-                />
-            </a>
-        </div>
+    <div class="logo-section">
+        <img
+            class="logo"
+            src="/assets/img/logo-horizontal.png"
+            alt="Logotipo da 1a Semana de Programação da Unifei"
+        />
+        <p>I Semana de Programação</p>
+        <p>Todos os direitos reservados</p>
+    </div>
+    <div class="organizers-section">
+        <h4>Organizadores</h4>
+        <ul>
+            {#each organizerList as organizer}
+                <li>
+                    <a class="organizer-item" href={organizer.site}
+                        >{organizer.name}</a
+                    >
+                </li>
+            {/each}
+        </ul>
+    </div>
+    <div class="unifei-section">
+        <img src={logoUnifei.src} alt={logoUnifei.alt} />
+        <img src={logoImc.src} alt={logoImc.alt} />
     </div>
 </footer>
+<div class="divider" />
+
+<div class="byron-section">
+    <p>Desenvolvido por</p>
+
+    <a href="http://byronsolutions.com">
+        <img
+            src="/assets/img/logo-byron-branca.png"
+            alt="Logotipo da byron.solutions"
+        />
+    </a>
+</div>
 
 <style>
     footer {
         padding: 2.5rem 1.5rem;
-    }
-
-    .footer-wrapper {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
@@ -77,7 +77,7 @@
         gap: 2rem;
     }
 
-    .footer-wrapper > div {
+    footer > div {
         width: 100%;
     }
 
@@ -104,9 +104,17 @@
         border-bottom: 2px solid var(--clr-foreground-primary);
     }
 
+    .unifei-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
     .unifei-section > img {
         width: 100%;
-        max-width: 25rem;
+        max-width: 20rem;
+        /* max-height: 10rem; */
     }
 
     .logo {
@@ -118,21 +126,26 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        margin: 1.5rem 0;
     }
 
     .divider {
-        width: max;
+        width: 100%;
+        margin: 0 1.5rem;
         border-bottom: 2px solid var(--clr-background-secondary);
     }
 
     @media only screen and (min-width: 768px) {
-        .footer-wrapper {
-            align-items: center;
+        footer {
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 2rem 4rem;
         }
-    }
 
-    @media only screen and (min-width: 1440px) {
-        .footer-wrapper {
+        .byron-section {
+            flex-direction: row;
+            gap: 1rem;
         }
     }
 </style>

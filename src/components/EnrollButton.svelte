@@ -6,10 +6,11 @@
 
 <button
     on:click={() =>
-        animateScroll.scrollTo({ element: '#subscriptionForm', offset: -100 })}
+        animateScroll.scrollTo({ element: '#subscriptionForm', offset: -220 })}
     class="button-enroll"
 >
-    <img src="assets/img/down-arrow.png" alt="Seta apontando para baixo" />
+    <span id="arrow" />
+
     {text}
 </button>
 
@@ -21,6 +22,7 @@
         align-items: center;
         gap: 0.25rem;
 
+        transition: 100ms;
         background-color: transparent;
         border: none;
         color: var(--clr-foreground-secondary);
@@ -28,8 +30,23 @@
         cursor: pointer;
     }
 
+    #arrow {
+        mask: url(/assets/img/down-arrow.svg);
+        mask-size: 100%;
+        mask-repeat: no-repeat;
+        background-color: var(--clr-foreground-secondary);
+        width: 1.5rem;
+        height: 1.5rem;
+        transition: 100ms;
+    }
+
+    button:hover #arrow,
+    button:focus #arrow {
+        background-color: var(--clr-foreground-primary);
+    }
+
+    .button-enroll:hover,
     .button-enroll:focus {
-        background-color: transparent;
         color: var(--clr-foreground-primary);
     }
 </style>

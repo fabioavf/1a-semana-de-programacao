@@ -1,10 +1,13 @@
 <script>
+    import * as animateScroll from 'svelte-scrollto';
+
     let daysList = [
         {
             id: 1,
             tabTitle: 'Segunda-feira (01/11)',
             title: 'byron.solutions',
             subtitle: 'Desenvolvimento de um portfólio pessoal',
+            language: 'javascript',
             schedule: [
                 {
                     title: '13h30 - 15h00',
@@ -26,8 +29,9 @@
         {
             id: 2,
             tabTitle: 'Quarta-feira (03/11)',
-            title: 'Black Bee',
+            title: 'Black Bee Drones',
             subtitle: 'Visão computacional',
+            language: 'python',
             schedule: [
                 {
                     title: '13h30 - 15h00',
@@ -41,7 +45,7 @@
                 },
                 {
                     title: '19h30 - 20h30',
-                    description: 'Palestra: a definir',
+                    description: 'Palestra: Visão Computacional',
                 },
             ],
         },
@@ -50,6 +54,7 @@
             tabTitle: 'Quinta-feira (04/11)',
             title: 'Dev-U',
             subtitle: 'Programação de Jogos',
+            language: 'csharp',
             schedule: [
                 {
                     title: '13h30 - 15h00',
@@ -72,6 +77,7 @@
             tabTitle: 'Sexta-feira (05/11)',
             title: 'Maratona de programação',
             subtitle: '',
+            language: 'cpp',
             schedule: [
                 {
                     title: '13h30 - 15h00',
@@ -137,10 +143,11 @@
                         <h3 class="tab-subtitle">{day.subtitle}</h3>
                     </div>
 
-                    <code class="tab-code">
-                        def main(): <br />
-                        &nbsp;&nbsp print("Hello, SEPROG!")
-                    </code>
+                    <img
+                        id="codeSnippet"
+                        src="/assets/img/hello-{day.language}.png"
+                        alt=""
+                    />
                 </div>
 
                 <div class="right-tab-section">
@@ -157,7 +164,14 @@
                         {/each}
                     </ul>
 
-                    <button class="enroll-button">Quero participar</button>
+                    <button
+                        on:click={() =>
+                            animateScroll.scrollTo({
+                                element: '#subscriptionForm',
+                                offset: -220,
+                            })}
+                        class="enroll-button">Quero participar</button
+                    >
                 </div>
             </div>
         {/each}
@@ -169,15 +183,18 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-around;
+        gap: 3rem;
 
-        width: 100%;
-        margin: 2rem 0;
+        /* width: 100%; */
+        max-width: 50rem;
+        margin: 2rem 1.5rem;
     }
 
     .heading {
         font-size: var(--font-size-h1-mobile);
         font-weight: var(--font-weight-h1);
-        margin: 3rem 1.5rem;
+        /* margin: 3rem 1.5rem; */
     }
 
     .tabs-section {
@@ -186,11 +203,10 @@
         justify-content: center;
         align-items: center;
 
-        /* width: 72.5rem; */
+        width: 100%;
         border-radius: 0.5rem;
         border: 1px solid #000;
         background-color: var(--clr-background-secondary);
-        margin: 0 1.5rem;
     }
 
     .tabs-list {
@@ -233,6 +249,11 @@
         display: block;
     }
 
+    #codeSnippet {
+        width: 100%;
+        padding: 0;
+    }
+
     .tabs-button:last-child {
         border-right: none;
     }
@@ -257,7 +278,7 @@
     }
 
     .tab-subtitle {
-        color: var(--clr-foreground-primary);
+        color: var(--clr-foreground-primary-lighter);
         letter-spacing: 1.5px;
     }
 
@@ -322,20 +343,20 @@
         border-radius: 0.25rem;
         width: 100%;
         padding: 0.5rem 0;
+        cursor: pointer;
+        transition: 100ms;
 
         filter: drop-shadow(0.125rem 0.25rem 0.25rem hsla(0, 0%, 0%, 0.25));
     }
 
-    @media only screen and (min-width: 1440px) {
-        .tabs-button {
-            display: block;
-        }
-
-        .list-expander {
-            display: none;
-        }
+    .enroll-button:hover,
+    .enroll-button:focus {
+        background-color: var(--clr-foreground-primary-darker);
     }
-    @media only screen and (min-width: 768px) and (max-width: 1439px) {
+    @media only screen and (min-width: 768px) {
+        .container {
+            width: 100%;
+        }
         .tabs-button {
             display: block;
         }

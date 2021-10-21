@@ -36,40 +36,38 @@
             title: 'Maratona de Programação',
         },
     ];
-
-    let width;
-
-    $: console.log(width);
 </script>
 
-<svelte:window bind:outerWidth={width} />
+<div class="bg-container">
+    <div class="container">
+        <div class="heading">
+            <h1 class="heading-title">
+                I Semana de Programação <br />
+                Faça parte dessa evolução!
+            </h1>
+            <p class="heading-subtitle">
+                Se atualize com a evolução da tecnologia! Será uma semana de
+                aprendizados em desenvolvimento web, visão computacional,
+                programação em jogos e maratona de programação!
+            </p>
+        </div>
 
-<div class="container" style="--background-url: url({backgroundImage.src});">
-    <div class="heading">
-        <h1 class="heading-title">
-            Seu ecossistema para aprender e evoluir na programação
-        </h1>
-        <p class="heading-subtitle">
-            Embarque no foguete com milhares de devs para aprender
-            desenvolvimento web, evoluir de forma contínua e se manter relevante
-            no mercado.
-        </p>
+        <div class="events-wrapper">
+            <div class="events-section">
+                <ul class="events-list">
+                    {#each eventList as event}
+                        <li class="event drop-shadow">
+                            <div class="img-wrapper">
+                                <img src={event.img.src} alt={event.img.alt} />
+                            </div>
+                            <p>{event.title}</p>
+                        </li>
+                    {/each}
+                </ul>
+            </div>
+            <EnrollButton text="Inscreva-se!" />
+        </div>
     </div>
-
-    <div class="events-section">
-        <ul class="events-list">
-            {#each eventList as event}
-                <li class="event drop-shadow">
-                    <div class="img-wrapper">
-                        <img src={event.img.src} alt={event.img.alt} />
-                    </div>
-                    <p>{event.title}</p>
-                </li>
-            {/each}
-        </ul>
-    </div>
-
-    <EnrollButton text="Inscreva-se!" />
 </div>
 
 <style>
@@ -78,8 +76,11 @@
         flex-direction: column;
         align-items: center;
 
+        max-width: 50rem;
+
         padding-top: 8rem;
-        margin-bottom: 2rem;
+        margin: 2rem 1.5rem;
+        /* margin-bottom: 2rem; */
     }
 
     .heading {
@@ -124,6 +125,12 @@
         line-height: 150%;
     }
 
+    .events-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .img-wrapper {
         background-color: var(--clr-background-primary);
         border-radius: 0.25rem;
@@ -142,15 +149,52 @@
     }
 
     @media only screen and (min-width: 768px) {
-        /* .container {
-            padding-left: 10rem;
-            padding-right: 10rem;
-        } */
-        /* .heading-title {
+        .heading {
             text-align: left;
-        } */
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+        }
         .events-list {
             grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    @media only screen and (min-width: 1368px) {
+        .heading {
+            align-self: baseline;
+            max-width: 37.5rem;
+        }
+
+        .container {
+            height: 50rem;
+            max-width: 75rem;
+
+            justify-content: space-around;
+        }
+        .bg-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            width: 100%;
+            background-image: url(/assets/img/mountains.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: bottom;
+        }
+        .events-list {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            /* background-color: var(--clr-foreground-primary); */
+        }
+
+        .event {
+            flex-direction: row;
+            justify-content: flex-start;
+            width: 15rem;
+
+            text-align: left;
         }
     }
 </style>

@@ -55,26 +55,28 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
 
-        width: 100%;
-        margin: 2rem 0;
+        max-width: 50rem;
+        margin: 2rem 1.5rem !important;
     }
 
     .section-title {
         font-size: var(--font-size-h1-mobile);
         font-weight: var(--font-weight-h1);
-        margin: 0 1.5rem;
         margin-bottom: 3rem;
+        text-align: center;
     }
 
     .card-section {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
-        justify-content: center;
         justify-items: center;
         gap: 2rem;
-        padding: 0 1.5rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        /* padding: 0 1.5rem; */
     }
 
     .card {
@@ -102,6 +104,7 @@
     }
 
     .card-title {
+        text-align: center;
         font-size: var(--font-size-h2-mobile);
         font-weight: 700;
     }
@@ -126,14 +129,34 @@
     }
 
     @media only screen and (min-width: 768px) {
+        .container {
+            width: 100%;
+        }
         .card-section {
             grid-template-columns: 1fr 1fr;
         }
+
+        .card:nth-child(odd) {
+            justify-self: baseline;
+        }
+
+        .card:nth-child(even) {
+            justify-self: end;
+        }
     }
 
-    /* @media only screen and (min-width: 1440px) {
+    @media only screen and (min-width: 1368px) {
+        .container {
+            max-width: 75rem;
+        }
         .card-section {
             grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1rem;
         }
-    } */
+
+        .card {
+            gap: 1rem;
+            padding: 2.5rem 1rem;
+        }
+    }
 </style>
