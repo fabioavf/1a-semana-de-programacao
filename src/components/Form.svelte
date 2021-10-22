@@ -1,9 +1,9 @@
 <script>
-    let innerWidth;
+    let outerWidth;
     let iframeWidth = 800;
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:outerWidth />
 
 <div class="container">
     <h1 class="section-title">Evolua conosco!</h1>
@@ -11,7 +11,7 @@
     <iframe
         id="subscriptionForm"
         src="https://docs.google.com/forms/d/e/1FAIpQLScFOAmQZc8YvdwNBydNqz0xmqyctL9NhzP3nUNByLzhHXE1Rg/viewform?embedded=true"
-        width={innerWidth < iframeWidth + 64 ? innerWidth - 64 : iframeWidth}
+        width={outerWidth < iframeWidth + 32 ? outerWidth - 32 : iframeWidth}
         height="1550"
         frameborder="0"
         marginheight="0"
