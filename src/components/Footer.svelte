@@ -12,6 +12,10 @@
             name: 'Dev-U',
             site: 'https://dev-unifei.github.io/',
         },
+        {
+            name: 'Maratona de Programação',
+            site: '',
+        },
     ];
 
     let logoUnifei = {
@@ -31,7 +35,7 @@
     <div class="logo-section">
         <img
             class="logo"
-            src="/assets/img/logo-horizontal.png"
+            src="/assets/img/logo.svg"
             alt="Logotipo da 1a Semana de Programação da Unifei"
         />
         <p>I Semana de Programação</p>
@@ -42,8 +46,10 @@
         <ul>
             {#each organizerList as organizer}
                 <li>
-                    <a class="organizer-item" href={organizer.site}
-                        >{organizer.name}</a
+                    <a
+                        class="organizer-item"
+                        href={organizer.site}
+                        target="_blank">{organizer.name}</a
                     >
                 </li>
             {/each}
@@ -59,7 +65,7 @@
 <div class="byron-section">
     <p>Desenvolvido por</p>
 
-    <a href="http://byronsolutions.com">
+    <a href="http://byronsolutions.com" target="_blank">
         <img
             src="/assets/img/logo-byron-branca.png"
             alt="Logotipo da byron.solutions"

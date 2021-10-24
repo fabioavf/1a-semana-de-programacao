@@ -1,6 +1,6 @@
 <script>
     let logo = {
-        src: 'assets/img/logo-horizontal.png',
+        src: 'assets/img/logo.svg',
         alt: 'Logo da 1a Semana de Programação',
     };
     let navItems = [
@@ -37,7 +37,7 @@
         top: 0;
 
         background-color: var(--clr-background-primary);
-        padding: 1rem 0;
+        padding: 0 0;
         z-index: 1;
 
         filter: drop-shadow(0.125rem 0 0.25rem hsla(0, 0%, 0%, 0.5));
@@ -65,7 +65,7 @@
     }
 
     .nav-logo img {
-        height: 3rem;
+        height: 5rem;
         width: auto;
         z-index: 2;
     }

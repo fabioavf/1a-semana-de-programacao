@@ -9,7 +9,7 @@
         animateScroll.scrollTo({ element: '#subscriptionForm', offset: -220 })}
     class="button-enroll"
 >
-    <span id="arrow" />
+    <img id="arrow" src="/assets/img/down-arrow.png" />
 
     {text}
 </button>
@@ -31,18 +31,15 @@
     }
 
     #arrow {
-        mask: url(/assets/img/down-arrow.svg);
-        mask-size: 100%;
-        mask-repeat: no-repeat;
-        background-color: var(--clr-foreground-secondary);
         width: 1.5rem;
         height: 1.5rem;
+        filter: brightness(750%);
         transition: 100ms;
     }
 
     button:hover #arrow,
     button:focus #arrow {
-        background-color: var(--clr-foreground-primary);
+        filter: none;
     }
 
     .button-enroll:hover,

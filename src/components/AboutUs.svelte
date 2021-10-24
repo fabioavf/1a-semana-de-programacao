@@ -39,8 +39,9 @@
                         src="/assets/img/instagram-icon.svg"
                         alt="Logotipo do Instagram"
                     />
-                    <a href="http://instagram.com/{team.instagram}"
-                        >@{team.instagram}</a
+                    <a
+                        href="http://instagram.com/{team.instagram}"
+                        target="_blank">@{team.instagram}</a
                     >
                 </div>
             </li>
