@@ -9,7 +9,11 @@
         animateScroll.scrollTo({ element: '#subscriptionForm', offset: -220 })}
     class="button-enroll"
 >
-    <img id="arrow" src="/assets/img/down-arrow.png" />
+    <img
+        id="arrow"
+        alt="Seta apontando pata baixo"
+        src="/assets/img/down-arrow.png"
+    />
 
     {text}
 </button>
