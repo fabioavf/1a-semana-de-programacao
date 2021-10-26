@@ -6,7 +6,7 @@
 
 <button
     on:click={() =>
-        animateScroll.scrollTo({ element: '#subscriptionForm', offset: -220 })}
+        animateScroll.scrollTo({ element: '#schedule', offset: -60 })}
     class="button-enroll"
 >
     <img

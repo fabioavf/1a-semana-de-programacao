@@ -1,4 +1,6 @@
 <script>
+    import * as animateScroll from 'svelte-scrollto';
+
     import Carousel from '@beyonk/svelte-carousel';
     import EnrollButton from './EnrollButton.svelte';
 
@@ -41,31 +43,40 @@
 <div class="bg-container">
     <div class="container">
         <div class="heading">
-            <h1 class="heading-title">
-                I Semana de Programação <br />
-                Faça parte dessa evolução!
-            </h1>
-            <p class="heading-subtitle">
-                Se atualize com a evolução da tecnologia! Será uma semana de
-                aprendizados em desenvolvimento web, visão computacional,
-                programação em jogos e maratona de programação!
-            </p>
+            <div class="heading-right">
+                <h1 class="heading-title">De 01 a 04 de Novembro!</h1>
+            </div>
+            <div class="heading-left">
+                <h1 class="heading-title">Faça parte dessa evolução!</h1>
+                <p class="heading-subtitle">
+                    Se atualize com a evolução da tecnologia! Será uma semana de
+                    aprendizados em desenvolvimento web, visão computacional,
+                    programação em jogos e maratona de programação!
+                </p>
+            </div>
         </div>
 
         <div class="events-wrapper">
             <div class="events-section">
                 <ul class="events-list">
                     {#each eventList as event}
-                        <li class="event drop-shadow">
+                        <button
+                            on:click={() =>
+                                animateScroll.scrollTo({
+                                    element: '#schedule',
+                                    offset: -60,
+                                })}
+                            class="event drop-shadow"
+                        >
                             <div class="img-wrapper">
                                 <img src={event.img.src} alt={event.img.alt} />
                             </div>
                             <p>{event.title}</p>
-                        </li>
+                        </button>
                     {/each}
                 </ul>
             </div>
-            <EnrollButton text="Inscreva-se!" />
+            <EnrollButton text="Conheça nossa programação!" />
         </div>
     </div>
 </div>
@@ -76,14 +87,25 @@
         flex-direction: column;
         align-items: center;
 
-        max-width: 50rem;
+        max-width: 45rem;
 
-        padding-top: 8rem;
         margin: 2rem 1.5rem;
         /* margin-bottom: 2rem; */
     }
 
     .heading {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+
+        padding: 0 1.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .heading-left,
+    .heading-right {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -117,12 +139,21 @@
         justify-content: center;
         align-items: center;
         gap: 1rem;
+        border: none;
+        cursor: pointer;
 
+        color: var(--clr-foreground-secondary);
         background-color: var(--clr-foreground-primary);
         border-radius: 0.5rem;
         padding: 1rem 1.5rem;
         text-align: center;
         line-height: 150%;
+        transition: 200ms;
+    }
+
+    .event:focus,
+    .event:hover {
+        background-color: var(--clr-foreground-primary-darker);
     }
 
     .events-wrapper {
@@ -153,6 +184,12 @@
             text-align: left;
             padding: 0;
         }
+
+        .heading-left,
+        .heading-right {
+            text-align: left;
+        }
+
         .container {
             width: 100%;
         }
@@ -163,12 +200,17 @@
 
     @media only screen and (min-width: 1368px) {
         .heading {
+            width: 100%;
+            flex-direction: row-reverse;
             align-self: baseline;
+        }
+
+        .heading-left {
             max-width: 37.5rem;
         }
 
         .container {
-            height: 50rem;
+            height: 40rem;
             max-width: 75rem;
 
             justify-content: space-around;
@@ -192,7 +234,7 @@
         .event {
             flex-direction: row;
             justify-content: flex-start;
-            width: 15rem;
+            /* width: 15rem; */
 
             text-align: left;
         }

@@ -17,12 +17,12 @@
                 {
                     title: '16h00 - 18h30',
                     description:
-                        'Teoria: Será proposto o desenvolvimento de um portfólio pessoal para os alunos participantes.',
+                        'Prática: Será proposto o desenvolvimento de um portfólio pessoal para os alunos participantes.',
                 },
                 {
                     title: '19h30 - 20h30',
                     description:
-                        'Palestra: 	"Não é preciso anos de estudo para ser desenvolvedor"',
+                        'Palestra: "Não é preciso anos de estudo para ser desenvolvedor"',
                 },
             ],
         },
@@ -45,7 +45,8 @@
                 },
                 {
                     title: '19h30 - 20h30',
-                    description: 'Palestra: Visão Computacional',
+                    description:
+                        'Palestra: Aplcações de processamento digital de imagens e inteligência artificial no mercado de drones.',
                 },
             ],
         },
@@ -109,7 +110,7 @@
     };
 </script>
 
-<div class="container">
+<div id="schedule" class="container">
     <h1 class="heading">O que preparamos para você</h1>
 
     <div class="tabs-section drop-shadow">
@@ -168,7 +169,7 @@
                         on:click={() =>
                             animateScroll.scrollTo({
                                 element: '#subscriptionForm',
-                                offset: -220,
+                                offset: -120,
                             })}
                         class="enroll-button">Quero participar</button
                     >

@@ -35,7 +35,7 @@
     <div class="logo-section">
         <img
             class="logo"
-            src="/assets/img/logo.svg"
+            src="/assets/img/logo-horizontal.png"
             alt="Logotipo da 1a Semana de Programação da Unifei"
         />
         <p>I Semana de Programação</p>

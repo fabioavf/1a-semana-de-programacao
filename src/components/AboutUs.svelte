@@ -7,19 +7,19 @@
             instagram: 'byron.solutions',
         },
         {
-            name: 'Black Bee',
-            desc: 'A Black Bee Drones conquistou o terceiro lugar e arrancou elogios de todos os organizadores que ficaram extremamente surpresos com o fato de termos vindo de tão longe, termos sido tão bem-sucedidos logo na primeira participação e contarmos apenas com integrantes de graduação.',
+            name: 'Black Bee Drones',
+            desc: 'A Black Bee Drone é a primeira equipe de drones autônomos da América Latina, formada em 2015, referência em sua área de pesquisa. O desenvolvimento de tais VANTs ocorre para a participação em campeonatos, como o IMAV, que acontece todos os anos em um país diferente.',
             instagram: 'blackbeedrones',
         },
         {
             name: 'Dev-U',
-            desc: 'Os membros se envolvem com o desenvolvimento de jogos para as diversas plataformas, tendo enfoque na Mobile e PC, visando também participar de competições como game jams e disseminar conhecimento acerca das áreas de criação de jogos, através da divulgação de materiais.',
+            desc: 'A Dev-U é um projeto de extensão da UNIFEI que teve início em 2018, nosso intuito é desenvolver jogos e membros capacitados para o mercado de trabalho. O projeto conta com 4 áreas, sendo elas: AudioVisual, Programação, Gestão&Marketing e Game Design. Os membros desenvolvem jogos de diversas escalas, de dois dias até meses de criação, principalmente para PC. Dentro do projeto também temos uma equipe focada em participar de competições representando UNIFEI.',
             instagram: 'devunifei',
         },
         {
             name: 'Maratona de Programação',
-            desc: 'Os membros se envolvem com o desenvolvimento de jogos para as diversas plataformas, tendo enfoque na Mobile e PC, visando também participar de competições como game jams e disseminar conhecimento acerca das áreas de criação de jogos, através da divulgação de materiais.',
-            instagram: 'devunifei',
+            desc: 'A Maratona de Programação é uma competição focada em criatividade, desafios, trabalho em equipe e habilidade de resolver problemas. Participar da competição pode ajudar a abrir portas e conhecer novas realidades, tanto culturalmente quanto profissionalmente. Junte-se às mentes mais afiadas!',
+            instagram: '',
         },
     ];
 </script>
@@ -36,10 +36,12 @@
 
                 <div class="instagram-link">
                     <img
+                        style={team.instagram == '' ? 'display: none;' : ''}
                         src="/assets/img/instagram-icon.svg"
                         alt="Logotipo do Instagram"
                     />
                     <a
+                        style={team.instagram == '' ? 'display: none;' : ''}
                         href="http://instagram.com/{team.instagram}"
                         target="_blank">@{team.instagram}</a
                     >
@@ -122,6 +124,7 @@
         justify-content: baseline;
         align-items: center;
         gap: 0.5rem;
+        height: 30px;
     }
 
     .instagram-link > a {
