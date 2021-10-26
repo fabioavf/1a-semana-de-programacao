@@ -165,7 +165,10 @@
                         {/each}
                     </ul>
 
-                    <a href="http://google.com" target="_blank">
+                    <a
+                        href="https://www.sympla.com.br/i-semana-de-programacao---unifei__1392407"
+                        target="_blank"
+                    >
                         <button class="enroll-button">Quero participar</button>
                     </a>
                 </div>
