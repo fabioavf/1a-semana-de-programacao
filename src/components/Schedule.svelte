@@ -77,7 +77,7 @@
             id: 4,
             tabTitle: 'Sexta-feira (05/11)',
             title: 'Maratona de programação',
-            subtitle: '',
+            subtitle: 'Para quem gosta de desafios',
             language: 'cpp',
             schedule: [
                 {
@@ -277,17 +277,6 @@
     .tab-subtitle {
         color: var(--clr-foreground-primary-lighter);
         letter-spacing: 1.5px;
-    }
-
-    .tab-code {
-        display: block;
-        border: 1px solid black;
-        border-radius: 0.5rem;
-        background-color: var(--clr-background-primary);
-        padding: 1rem;
-        font-size: 12px;
-
-        font-family: monospace;
     }
 
     .left-tab-section {
