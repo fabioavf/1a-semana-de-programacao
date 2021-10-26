@@ -4,14 +4,12 @@
     import AboutUs from './components/AboutUs.svelte';
     import Footer from './components/Footer.svelte';
     import Schedule from './components/Schedule.svelte';
-    import Form from './components/Form.svelte';
 </script>
 
 <Header />
 <Hero />
 <AboutUs />
 <Schedule />
-<!-- <Form /> -->
 <Footer />
 
 <style>
