@@ -11,7 +11,7 @@
 <Hero />
 <AboutUs />
 <Schedule />
-<Form />
+<!-- <Form /> -->
 <Footer />
 
 <style>

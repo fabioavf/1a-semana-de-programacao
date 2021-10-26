@@ -46,7 +46,7 @@
                 {
                     title: '19h30 - 20h30',
                     description:
-                        'Palestra: Aplcações de processamento digital de imagens e inteligência artificial no mercado de drones.',
+                        'Palestra: Aplicações de processamento digital de imagens e inteligência artificial no mercado de drones.',
                 },
             ],
         },
@@ -165,20 +165,16 @@
                         {/each}
                     </ul>
 
-                    <button
-                        on:click={() =>
-                            animateScroll.scrollTo({
-                                element: '#subscriptionForm',
-                                offset: -120,
-                            })}
-                        class="enroll-button">Quero participar</button
-                    >
+                    <a href="http://google.com" target="_blank">
+                        <button class="enroll-button">Quero participar</button>
+                    </a>
                 </div>
             </div>
         {/each}
     </div>
 </div>
 
+<!-- on:click={() =>animateScroll.scrollTo({element: '#subscriptionForm',offset: -120,})} -->
 <style>
     .container {
         display: flex;

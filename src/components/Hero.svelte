@@ -11,31 +11,31 @@
     let eventList = [
         {
             img: {
-                src: '/assets/img/movie-ticket.svg',
+                src: '/assets/img/logo-byron-square.png',
                 alt: 'Imagem Evento 1',
             },
-            title: 'HTML / CSS / JS básico',
+            title: 'HTML / CSS / JS',
         },
         {
             img: {
-                src: '/assets/img/movie-ticket.svg',
+                src: '/assets/img/logo-blackbee.png',
                 alt: 'Imagem Evento 2',
             },
             title: 'Python',
         },
         {
             img: {
-                src: '/assets/img/movie-ticket.svg',
+                src: '/assets/img/logo-devu.png',
                 alt: 'Imagem Evento 3',
             },
             title: 'C# e Unity',
         },
         {
             img: {
-                src: '/assets/img/movie-ticket.svg',
+                src: '/assets/img/logo-maratona.png',
                 alt: 'Imagem Evento 4',
             },
-            title: 'Maratona de Programação',
+            title: 'C++',
         },
     ];
 </script>
@@ -44,7 +44,7 @@
     <div class="container">
         <div class="heading">
             <div class="heading-right">
-                <h1 class="heading-title">De 01 a 04 de Novembro!</h1>
+                <h1 class="heading-title">De 01 a 05 de Novembro!</h1>
             </div>
             <div class="heading-left">
                 <h1 class="heading-title">Faça parte dessa evolução!</h1>
@@ -141,6 +141,7 @@
         gap: 1rem;
         border: none;
         cursor: pointer;
+        min-width: 16rem;
 
         color: var(--clr-foreground-secondary);
         background-color: var(--clr-foreground-primary);
@@ -165,10 +166,16 @@
     .img-wrapper {
         background-color: var(--clr-background-primary);
         border-radius: 0.25rem;
+        height: 5.75rem;
+        width: 5.75rem;
+        position: relative;
     }
 
     .img-wrapper > img {
-        padding: 1rem;
+        border-radius: 0.25rem;
+        width: 100%;
+        position: absolute;
+        inset: 0;
     }
 
     .event > p {

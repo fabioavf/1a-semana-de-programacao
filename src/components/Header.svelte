@@ -4,7 +4,7 @@
 <header class="header-section">
     <img
         class="header-logo"
-        src="/assets/img/logo.svg"
+        src="/assets/img/logo-horizontal.png"
         alt="Logotipo da I Semana de Programação"
     />
 
