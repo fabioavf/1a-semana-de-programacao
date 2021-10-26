@@ -13,7 +13,7 @@
         },
         {
             name: 'Dev-U',
-            desc: 'A Dev-U é um projeto de extensão da UNIFEI que teve início em 2018, nosso intuito é desenvolver jogos e membros capacitados para o mercado de trabalho. O projeto conta com 4 áreas, sendo elas: AudioVisual, Programação, Gestão&Marketing e Game Design. Os membros desenvolvem jogos de diversas escalas, de dois dias até meses de criação, principalmente para PC. Dentro do projeto também temos uma equipe focada em participar de competições representando UNIFEI.',
+            desc: 'A Dev-U é um projeto de extensão da UNIFEI que teve início em 2018, nossa missão é desenvolver jogos e capacitar membros para o mercado de trabalho. O projeto tem 4 áreas, sendo elas: AudioVisual, Programação, Gestão&Marketing e Game Design.',
             instagram: 'devunifei',
         },
         {
