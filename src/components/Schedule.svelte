@@ -281,9 +281,6 @@
         height: auto;
     }
 
-    .tab-heading {
-    }
-
     .tab-title {
         font-size: 22px;
         font-weight: 700;
