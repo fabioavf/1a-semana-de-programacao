@@ -91,7 +91,8 @@
                 },
                 {
                     title: '19h30 - 20h30',
-                    description: 'Palestra: Maratona de programação',
+                    description:
+                        'Palestra: Cuide do seu Currículo Acadêmico e adicione a experiência da Maratona de Programação',
                 },
             ],
         },
