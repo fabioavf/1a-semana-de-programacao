@@ -73,7 +73,8 @@
                 },
                 {
                     title: '19h30 - 20h30',
-                    description: 'Palestra: Desenvolvimento de "serious games"',
+                    description:
+                        'Palestra: Desenvolvimento de jogos aplicados a educação e saúde',
                     speaker: 'Palestrante: Prof. Dr. Ricardo Nakamura',
                 },
             ],
