@@ -23,6 +23,8 @@
                     title: '19h30 - 20h30',
                     description:
                         'Palestra: "Não é preciso anos de estudo para ser desenvolvedor"',
+                    speaker:
+                        'Palestrantes: Isabela de Souza Silva e Marcelo Henrique Rocha',
                 },
             ],
         },
@@ -47,6 +49,8 @@
                     title: '19h30 - 20h30',
                     description:
                         'Palestra: Aplicações de processamento digital de imagens e inteligência artificial no mercado de drones.',
+                    speaker:
+                        'Palestrante: Caique Duarte (ex capitão-geral da equipe)',
                 },
             ],
         },
@@ -70,6 +74,7 @@
                 {
                     title: '19h30 - 20h30',
                     description: 'Palestra: Desenvolvimento de "serious games"',
+                    speaker: 'Palestrante: Prof. Dr. Ricardo Nakamura',
                 },
             ],
         },
@@ -93,6 +98,8 @@
                     title: '19h30 - 20h30',
                     description:
                         'Palestra: Cuide do seu Currículo Acadêmico e adicione a experiência da Maratona de Programação',
+                    speaker:
+                        'Palestrantes: Prof. Dr. Alberto Alexandre Assis Miranda e Prof. Dr. Lúcio Fernandes Dutra Santos',
                 },
             ],
         },
@@ -162,6 +169,11 @@
                                 <p class="tab-schedule-item-desc">
                                     {timeframe.description}
                                 </p>
+                                {#if timeframe.speaker}
+                                    <p class="tab-schedule-item-desc">
+                                        {timeframe.speaker}
+                                    </p>
+                                {/if}
                             </li>
                         {/each}
                     </ul>
